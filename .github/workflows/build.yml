@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
     tags:
       - 'v1.2'  # タグが push されたときにも実行
 
