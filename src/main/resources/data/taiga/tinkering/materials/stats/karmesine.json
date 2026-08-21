@@ -1,0 +1,44 @@
+{
+  "stats": {
+    "tconstruct:binding": {},
+    "tconstruct:grip": {},
+    "tconstruct:handle": {
+      "durability": 0.99,
+      "melee_damage": -0.01,
+      "melee_speed": -0.0,
+      "mining_speed": -0.01
+    },
+    "tconstruct:head": {
+      "durability": 1249,
+      "melee_attack": 13.51,
+      "mining_speed": 8.37,
+      "mining_tier": "taigaishoku:meteorite"
+    },
+    "tconstruct:limb": {},
+    "tconstruct:maille": {},
+    "tconstruct:plating_boots": {
+      "armor": 4.25,
+      "durability": 764,
+      "toughness": 3.41
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 6.07,
+      "durability": 899,
+      "toughness": 3.79
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 3.95,
+      "durability": 737,
+      "toughness": 3.41
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 5.16,
+      "durability": 827,
+      "toughness": 3.6
+    },
+    "tconstruct:plating_shield": {
+      "durability": 719,
+      "toughness": 4.36
+    }
+  }
+}
