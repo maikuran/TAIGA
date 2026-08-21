@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#9f8a4a",
+  "fluid": "taigaishoku:cryptogen",
+  "translationKey": "material.taigaishoku.cryptogen"
+}

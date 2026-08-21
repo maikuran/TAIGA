@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#b6af74",
+  "fluid": "taigaishoku:aegisalt",
+  "translationKey": "material.taigaishoku.aegisalt"
+}

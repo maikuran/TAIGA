@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 8,
+  "sortOrder": 8,
+  "hidden": false,
+  "color": "#c45c82",
+  "fluid": "taigaishoku:adamantite",
+  "translationKey": "material.taigaishoku.adamantite"
+}

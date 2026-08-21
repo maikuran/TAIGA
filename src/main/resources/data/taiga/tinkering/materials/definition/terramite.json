@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#a6b27a",
+  "fluid": "taigaishoku:terramite",
+  "translationKey": "material.taigaishoku.terramite"
+}

@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 3,
+  "sortOrder": 3,
+  "hidden": false,
+  "color": "#5f9e2d",
+  "fluid": "taigaishoku:tiberium",
+  "translationKey": "material.taigaishoku.tiberium"
+}

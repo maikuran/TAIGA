@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 4,
+  "hidden": false,
+  "color": "#264c4f",
+  "fluid": "taigaishoku:violium",
+  "translationKey": "material.taigaishoku.violium"
+}

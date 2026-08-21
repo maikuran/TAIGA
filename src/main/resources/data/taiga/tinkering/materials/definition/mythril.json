@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#a8c0ba",
+  "fluid": "taigaishoku:mythril",
+  "translationKey": "material.taigaishoku.mythril"
+}

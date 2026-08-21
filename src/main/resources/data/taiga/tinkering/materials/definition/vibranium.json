@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 7,
+  "sortOrder": 7,
+  "hidden": false,
+  "color": "#c4ddc8",
+  "fluid": "taigaishoku:vibranium",
+  "translationKey": "material.taigaishoku.vibranium"
+}

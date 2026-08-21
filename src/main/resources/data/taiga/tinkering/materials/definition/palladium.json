@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#fe5c05",
+  "fluid": "taigaishoku:palladium",
+  "translationKey": "material.taigaishoku.palladium"
+}

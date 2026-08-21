@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 4,
+  "hidden": false,
+  "color": "#fbe8cb",
+  "fluid": "taigaishoku:lumixyl",
+  "translationKey": "material.taigaishoku.lumixyl"
+}

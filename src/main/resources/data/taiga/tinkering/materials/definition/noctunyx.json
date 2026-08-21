@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#5f5081",
+  "fluid": "taigaishoku:noctunyx",
+  "translationKey": "material.taigaishoku.noctunyx"
+}

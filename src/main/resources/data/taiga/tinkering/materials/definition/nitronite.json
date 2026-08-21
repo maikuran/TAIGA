@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#dfe553",
+  "fluid": "taigaishoku:nitronite",
+  "translationKey": "material.taigaishoku.nitronite"
+}

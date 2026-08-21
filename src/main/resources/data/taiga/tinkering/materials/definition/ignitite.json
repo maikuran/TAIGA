@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 7,
+  "sortOrder": 7,
+  "hidden": false,
+  "color": "#ff6642",
+  "fluid": "taigaishoku:ignitite",
+  "translationKey": "material.taigaishoku.ignitite"
+}

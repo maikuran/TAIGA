@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 7,
+  "sortOrder": 7,
+  "hidden": false,
+  "color": "#f5f294",
+  "fluid": "taigaishoku:ultranite",
+  "translationKey": "material.taigaishoku.ultranite"
+}

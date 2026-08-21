@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#6e6a62",
+  "fluid": "taigaishoku:meteorite",
+  "translationKey": "material.taigaishoku.meteorite"
+}

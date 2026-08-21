@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 7,
+  "sortOrder": 7,
+  "hidden": false,
+  "color": "#46131d",
+  "fluid": "taigaishoku:seismodium",
+  "translationKey": "material.taigaishoku.seismodium"
+}

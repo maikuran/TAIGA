@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 4,
+  "hidden": false,
+  "color": "#fafa98",
+  "fluid": "taigaishoku:eternite",
+  "translationKey": "material.taigaishoku.eternite"
+}

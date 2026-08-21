@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 7,
+  "sortOrder": 7,
+  "hidden": false,
+  "color": "#7a3b74",
+  "fluid": "taigaishoku:astrium",
+  "translationKey": "material.taigaishoku.astrium"
+}

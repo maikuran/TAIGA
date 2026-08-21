@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#2b282f",
+  "fluid": "taigaishoku:prometheum",
+  "translationKey": "material.taigaishoku.prometheum"
+}

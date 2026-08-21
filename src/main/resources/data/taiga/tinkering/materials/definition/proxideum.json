@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#2f7177",
+  "fluid": "taigaishoku:proxideum",
+  "translationKey": "material.taigaishoku.proxideum"
+}

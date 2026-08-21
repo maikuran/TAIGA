@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#ff6743",
+  "fluid": "taigaishoku:dyonite",
+  "translationKey": "material.taigaishoku.dyonite"
+}

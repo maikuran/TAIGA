@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#c16d6d",
+  "fluid": "taigaishoku:karmesine",
+  "translationKey": "material.taigaishoku.karmesine"
+}

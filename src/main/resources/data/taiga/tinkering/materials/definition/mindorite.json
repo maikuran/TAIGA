@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#6bbbff",
+  "fluid": "taigaishoku:mindorite",
+  "translationKey": "material.taigaishoku.mindorite"
+}

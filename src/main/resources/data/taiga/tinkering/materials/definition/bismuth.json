@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 3,
+  "sortOrder": 3,
+  "hidden": false,
+  "color": "#555555",
+  "fluid": "taigaishoku:bismuth",
+  "translationKey": "material.taigaishoku.bismuth"
+}

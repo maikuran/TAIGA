@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 4,
+  "hidden": false,
+  "color": "#7b97b0",
+  "fluid": "taigaishoku:bysmuid",
+  "translationKey": "material.taigaishoku.bysmuid"
+}

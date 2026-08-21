@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 5,
+  "sortOrder": 5,
+  "hidden": false,
+  "color": "#e0ede7",
+  "fluid": "taigaishoku:titanite",
+  "translationKey": "material.taigaishoku.titanite"
+}

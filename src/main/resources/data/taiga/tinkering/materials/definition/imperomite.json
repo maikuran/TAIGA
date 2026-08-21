@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "color": "#ff6642",
+  "fluid": "taigaishoku:imperomite",
+  "translationKey": "material.taigaishoku.imperomite"
+}

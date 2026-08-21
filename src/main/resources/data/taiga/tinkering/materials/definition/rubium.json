@@ -1,0 +1,9 @@
+{
+  "craftable": false,
+  "tier": 4,
+  "sortOrder": 4,
+  "hidden": false,
+  "color": "#e371b0",
+  "fluid": "taigaishoku:rubium",
+  "translationKey": "material.taigaishoku.rubium"
+}
