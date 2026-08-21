@@ -1,7 +1,8 @@
 ![TAIGA IMAGE](http://www.sosnitzka.com/alt/files/taiga256.jpg)
-
+https//:chatgpt.com
 Tinkers Alloying Addon(TAIGA)
 ===============
+https://chatgpt.com
 TAIGA is an addon for Tinkers Construct. It aims to find new minable ores, new alloys and a bunch of new tinker traits for them.
 
 Included:
