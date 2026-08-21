@@ -1,0 +1,9 @@
+{
+  "craftable": true,
+  "tier": 6,
+  "sortOrder": 6,
+  "hidden": false,
+  "coloun": "#00ee00",
+  "fluid": "sakalti:aurostone",
+  "translationKey": "material.sakalti.aurostone"
+}
