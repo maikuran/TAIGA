@@ -1,217 +1,112 @@
-// For those who want the bleeding edge
-buildscript {
-    repositories {
-        jcenter()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
-        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.7'
-    }
+plugins {
+    id 'net.minecraftforge.gradle' version '6.0.24'
+    id 'java'
 }
 
-apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: "com.matthewprenger.cursegradle"
+group = 'com.sosnitzka'
+archivesBaseName = 'taiga'
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-    maven {
-        name = "chickenbones"
-        url = "http://chickenbones.net/maven/"
-    }
+version = '1.0.0'
 
-    maven {
-        name 'DVS1 Maven FS'
-        url 'http://dvs1.progwml6.com/files/maven'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
-
-group = "com.sosnitzka" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "taiga"
-
-task buildInfo {
-    if (System.getenv().TAIGA_TAG != null) {
-        ext.revision = System.getenv().TAIGA_TAG
-    } else {
-        ext.revision = "snapshot"
-    }
-
-    if (System.getenv().BUILD_NUMBER != null) {
-        ext.buildNum = System.getenv().BUILD_NUMBER
-    }
-
-    if (System.getenv().TAIGA_CHANGES != null) {
-        ext.changes = System.getenv().TAIGA_CHANGES
-    } else {
-        ext.changes = ""
-    }
-}
-
-version = project.buildInfo.revision
 
 minecraft {
-    version = "1.10.2-12.18.1.2011"
-    runDir = "run"
+    mappings channel: 'official', version: '1.20.1'
 
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not allways work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20160701"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    runs {
+        client {
+            workingDirectory project.file('run')
 
-    replace "${version}", project.version
+            mods {
+                taiga {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            mods {
+                taiga {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
 }
 
-ext.mc_version = project.minecraft.version.split('-')[0]
-version = "${mc_version}-${project.buildInfo.revision}"
+repositories {
+    maven {
+        name = 'forge'
+        url = 'https://maven.minecraftforge.net/'
+    }
+
+    maven {
+        name = 'blamejared'
+        url = 'https://maven.blamejared.com/'
+    }
+
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
+    }
+
+    mavenCentral()
+}
 
 dependencies {
-    //deobfCompile "codechicken:CodeChickenLib:1.9.4-2.0.2.39:deobf"
-    //deobfCompile "codechicken:CodeChickenCore:1.9.4-2.0.3.65:deobf"
-    //deobfCompile "codechicken:NotEnoughItems:1.9-${nei_version}:dev"
-    deobfCompile "slimeknights.mantle:Mantle:1.10.2-0.10.3.jenkins161:deobf"
-    //Old: deobfCompile "slimeknights.mantle:Mantle:1.9-0.10.0.jenkins132:deobf"
-    deobfCompile "mezz.jei:jei_1.10.2:3.7.6.231"
-    deobfCompile "slimeknights:TConstruct:1.10-2.3.3a.jenkins271:deobf"
-    //compile files('libs/TConstruct-1.9-2.3.1.DEV.1d4c1de-deobf.jar')
+    // Minecraft Forge 1.20.1
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.5'
+
+    // Mantle 1.20.1
+    compileOnly fg.deobf(
+        'curse.maven:mantle-74924:7563777'
+    )
+
+    // Tinkers' Construct 1.20.1
+    compileOnly fg.deobf(
+        'curse.maven:tinkers-construct-74072:7449219'
+    )
 }
 
 sourceSets {
     main {
         resources {
-            srcDir 'resources'
+            srcDir 'src/main/resources'
         }
     }
 }
 
-//noinspection GroovyAssignabilityCheck
 processResources {
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', '1.20.1'
 
-        // replace version and mcversion
-        expand 'version': project.version, 'mcversion': project.minecraft.version
-    }
-
-    // copy everything else, thats not the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+    filesMatching('META-INF/mods.toml') {
+        expand(
+            version: project.version,
+            mcversion: '1.20.1'
+        )
     }
 }
 
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
+jar {
+    manifest {
+        attributes(
+            'Specification-Title': 'taiga',
+            'Specification-Vendor': 'sosnitzka',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'sosnitzka'
+        )
+    }
+
+    finalizedBy 'reobfJar'
 }
-
-artifacts {
-    archives deobfJar
-}
-
-curseforge {
-    apiKey = System.getenv().CURSE_API_KEY ? System.getenv().CURSE_API_KEY : "devBuild"
-    project {
-        id = '247661'
-        changelog = project.buildInfo.changes // A file can also be set using: changelog = file('changelog.txt')
-        releaseType = 'release'
-
-        mainArtifact(jar) {
-            displayName = "taiga-${project.buildInfo.revision}"
-        }
-    }
-}
-/* FOR AUTO JSON
-ext.args = [:]
-
-ext.requireArgument = {String property, String displayValue ->
-    def value = args[property]
-    if (value == null) {
-        throw new InvalidUserDataException("$property must be set with \'$property=$displayValue\'")
-    }
-    return value
-}
-
-tasks.addRule("Pattern: <property>=<value>: Passes arguments to the scripts") { String taskName ->
-    def match = taskName =~ /(.*?)=(.*?$)/
-    if (match) {
-        def property = match[0][1]
-        def value = match[0][2]
-        ext.args[property] = value;
-        task(taskName) << {
-            println "Passes value \'$value\' to args[\'$property\']"
-        }
-    }
-}
-
-import org.apache.tools.ant.filters.FixCrLfFilter
-
-class CopyJsonTemplate extends DefaultTask {
-    @Input
-    def template
-
-    @Input
-    def arguments
-
-    @Input
-    def jsonRename
-
-    @TaskAction
-    def build() {
-        def args = arguments()
-        project.copy {
-            from("templates/${template}") {
-                expand(args)
-                filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('crlf'))
-            }
-            into 'src/main/resources'
-            rename { String filename ->
-                def match = filename =~ /(.*)\.json/
-                if (match) {
-                    def prevFilename = match[0][1]
-                    def newFilename = jsonRename.call(prevFilename)
-                    return "${newFilename}.json"
-                }
-                else {
-                    return filename
-                }
-            }
-        }
-    }
-}
-
-
-task generateBlockModel(type: CopyJsonTemplate) {
-    template 'block'
-    arguments {
-        def blockName = requireArgument('blockName', 'block_name')
-        return ['modid':archivesBaseName, 'block_name':blockName]
-    }
-    jsonRename {
-        return args['blockName']
-    }
-}
-
-task generateItemModel(type: CopyJsonTemplate) {
-    template 'item'
-    arguments {
-        def itemName = requireArgument('itemName', 'item_name')
-        return ['modid':archivesBaseName, 'item_name':itemName]
-    }
-    jsonRename {
-        return args['itemName']
-    }
-}*/
