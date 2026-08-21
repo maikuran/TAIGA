@@ -1,7 +1,22 @@
-plugins {
-    id 'net.minecraftforge.gradle'
-    id 'java'
+buildscript {
+    repositories {
+        maven {
+            name = 'MinecraftForge'
+            url = 'https://maven.minecraftforge.net/'
+        }
+
+        mavenCentral()
+
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:6.0.24'
+    }
 }
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'java'
 
 group = 'com.sosnitzka'
 archivesBaseName = 'taiga'
@@ -52,7 +67,7 @@ repositories {
 
     maven {
         name = 'CurseMaven'
-        url = 'https://cursemaven.com'
+        url = 'https://cursemaven.com/'
     }
 
     mavenCentral()
