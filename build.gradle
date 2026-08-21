@@ -1,11 +1,10 @@
 plugins {
-    id 'net.minecraftforge.gradle' version '6.0.24'
+    id 'net.minecraftforge.gradle'
     id 'java'
 }
 
 group = 'com.sosnitzka'
 archivesBaseName = 'taiga'
-
 version = '1.0.0'
 
 java {
@@ -42,12 +41,12 @@ minecraft {
 
 repositories {
     maven {
-        name = 'forge'
+        name = 'MinecraftForge'
         url = 'https://maven.minecraftforge.net/'
     }
 
     maven {
-        name = 'blamejared'
+        name = 'BlameJared'
         url = 'https://maven.blamejared.com/'
     }
 
@@ -60,15 +59,12 @@ repositories {
 }
 
 dependencies {
-    // Minecraft Forge 1.20.1
     minecraft 'net.minecraftforge:forge:1.20.1-47.4.5'
 
-    // Mantle 1.20.1
     compileOnly fg.deobf(
         'curse.maven:mantle-74924:7563777'
     )
 
-    // Tinkers' Construct 1.20.1
     compileOnly fg.deobf(
         'curse.maven:tinkers-construct-74072:7449219'
     )
@@ -107,6 +103,8 @@ jar {
             'Implementation-Vendor': 'sosnitzka'
         )
     }
+}
 
-    finalizedBy 'reobfJar'
+tasks.named('jar') {
+    finalizedBy('reobfJar')
 }
